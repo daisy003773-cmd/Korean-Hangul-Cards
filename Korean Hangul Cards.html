@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>韓語40音字卡學習</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 20px; display: flex; }
+    .left { flex: 2; padding-right: 20px; }
+    .right { flex: 1; border-left: 2px solid #ccc; padding-left: 20px; }
+    h2 { margin-top: 20px; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 10px; }
+    .card { border: 1px solid #ccc; padding: 15px; font-size: 22px; border-radius: 8px; text-align: center; cursor: pointer; }
+    .card:hover { opacity: 0.8; }
+    #info, #roman, #rule, #name, #category, #examples { font-size: 16px; color: #444; margin-bottom: 10px; white-space: pre-line; }
+    .series-container { display: flex; flex-wrap: wrap; gap: 30px; }
+    .vertical-group { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .sub { font-size: 12px; color: #333; }
+    .plain { background: #e0f7fa; }
+    .aspirated { background: #e8f5e9; height: 70px; width: 38px; padding: 8px; }
+    .tense { background: #ffebee; }
+    .simple-vowel { background: #fff9c4; }
+    .complex-vowel { background: #f3e5f5; }
+    .footer {
+  position: fixed;   /* 固定位置 */
+  right: 10px;       /* 靠右 */
+  bottom: 10px;      /* 靠下 */
+  font-size: 12px;   /* 細字 */
+  color: #666;       /* 灰色字 */
+  text-align: right; /* 右對齊 */
+  line-height: 1.4;  /* 行距 */
+}
+    button { margin: 5px 0; padding: 6px 12px; }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <h1>韓語40音字卡分類</h1>
+    <!-- 子音 -->
+    <h2>子音</h2>
+    <div class="series-container">
+      <div class="vertical-group">
+        <div class="card plain">ㄱ<br><span class="sub">平音</span></div>
+        <div class="card aspirated">ㅋ<br><span class="sub">送氣音</span></div>
+        <div class="card tense">ㄲ<br><span class="sub">硬音</span></div>
+      </div>
+      <div class="vertical-group"><div class="card plain">ㄴ<br><span class="sub">平音</span></div></div>
+      <div class="vertical-group">
+        <div class="card plain">ㄷ<br><span class="sub">平音</span></div>
+        <div class="card aspirated">ㅌ<br><span class="sub">送氣音</span></div>
+        <div class="card tense">ㄸ<br><span class="sub">硬音</span></div>
+      </div>
+      <div class="vertical-group"><div class="card plain">ㄹ<br><span class="sub">平音</span></div></div>
+      <div class="vertical-group"><div class="card plain">ㅁ<br><span class="sub">平音</span></div></div>
+      <div class="vertical-group">
+        <div class="card plain">ㅂ<br><span class="sub">平音</span></div>
+        <div class="card aspirated">ㅍ<br><span class="sub">送氣音</span></div>
+        <div class="card tense">ㅃ<br><span class="sub">硬音</span></div>
+      </div>
+      <div class="vertical-group">
+        <div class="card plain">ㅅ<br><span class="sub">平音</span></div>
+        <div style="height:88px;"></div> <!-- 留一行空白 -->
+        <div class="card tense">ㅆ<br><span class="sub">硬音</span></div>
+      </div>
+      <div class="vertical-group"><div class="card plain">ㅇ<br><span class="sub">平音</span></div></div>
+      <div class="vertical-group">
+        <div class="card plain">ㅈ<br><span class="sub">平音</span></div>
+        <div class="card aspirated">ㅊ<br><span class="sub">送氣音</span></div>
+        <div class="card tense">ㅉ<br><span class="sub">硬音</span></div>
+      </div>
+      <div class="vertical-group"><div class="card plain">ㅎ<br><span class="sub">平音</span></div></div>
+    </div>
+
+    <!-- 母音 -->
+    <h2>單母音</h2>
+    <div class="grid">
+      <div class="card simple-vowel">ㅏ</div><div class="card simple-vowel">ㅑ</div>
+      <div class="card simple-vowel">ㅓ</div><div class="card simple-vowel">ㅕ</div>
+      <div class="card simple-vowel">ㅗ</div><div class="card simple-vowel">ㅛ</div>
+      <div class="card simple-vowel">ㅜ</div><div class="card simple-vowel">ㅠ</div>
+      <div class="card simple-vowel">ㅡ</div><div class="card simple-vowel">ㅣ</div>
+    </div>
+    <h2>複合母音</h2>
+    <div class="grid">
+      <div class="card complex-vowel">ㅐ</div><div class="card complex-vowel">ㅒ</div>
+      <div class="card complex-vowel">ㅔ</div><div class="card complex-vowel">ㅖ</div>
+      <div class="card complex-vowel">ㅘ</div><div class="card complex-vowel">ㅙ</div>
+      <div class="card complex-vowel">ㅚ</div><div class="card complex-vowel">ㅝ</div>
+      <div class="card complex-vowel">ㅞ</div><div class="card complex-vowel">ㅟ</div>
+      <div class="card complex-vowel">ㅢ</div>
+    </div>
+  </div>
+
+  <!-- 右邊資訊 -->
+  <div class="right">
+    <h2>字母資訊</h2>
+    <div id="info">請點選左邊字卡</div>
+    <div id="roman"></div>
+    <div id="rule"></div>
+    <div id="name"></div>
+    <div id="category"></div>
+    <div id="examples"></div>
+    <hr>
+    <button onclick="playCurrent()">播放字母發音</button>
+    <button onclick="playExample()">播放例子詞語</button>
+    <hr>
+    <button onclick="playCategory('平音')">播放全部平音</button>
+    <button onclick="playCategory('送氣音')">播放全部送氣音</button>
+    <button onclick="playCategory('硬音')">播放全部硬音</button>
+    <button onclick="playCategory('單母音')">播放全部單母音</button>
+    <button onclick="playCategory('複合母音')">播放全部複合母音</button>
+  </div>
+
+<script>
+  let currentLetter = "";
+
+  function getSeries(letter) {
+    if (["ㄱ","ㅋ","ㄲ"].includes(letter)) return "ㄱ 系列";
+    if (["ㄷ","ㅌ","ㄸ"].includes(letter)) return "ㄷ 系列";
+    if (["ㅂ","ㅍ","ㅃ"].includes(letter)) return "ㅂ 系列";
+    if (["ㅈ","ㅊ","ㅉ"].includes(letter)) return "ㅈ 系列";
+    if (["ㅅ","ㅆ"].includes(letter)) return "ㅅ 系列";
+    if (["ㄹ"].includes(letter)) return "ㄹ 系列";
+    if (["ㄴ"].includes(letter)) return "ㄴ 系列";
+    if (["ㅁ"].includes(letter)) return "ㅁ 系列";
+    if (["ㅇ"].includes(letter)) return "ㅇ 系列";
+    if (["ㅎ"].includes(letter)) return "ㅎ 系列";
+    return "母音 系列";
+  }
+
+  const romanRules = {
+    "ㄱ": { roman: "k/g → 그", rule: "在初聲位置時，詞語第一個字偏向k，位於詞語其餘位置偏向g，在收尾音是k", sound: "그" },
+    "ㅋ": { roman: "k → 크", rule: "在初聲位置時，詞語第一個字和其餘位置都是k，在收尾音時是k", sound: "크" },
+    "ㄲ": { roman: "kk → 끄", rule: "在初聲位置時，詞語第一個字和其餘位置都是kk，在收尾音時是k", sound: "끄" },
+    "ㄷ": { roman: "t/d → 드", rule: "在初聲位置時，詞語第一個字偏向t，位於詞語其餘位置偏向d，在收尾音是t", sound: "드" },
+    "ㅌ": { roman: "t → 트", rule: "在初聲位置時，詞語第一個字和其餘位置都是t，在收尾音時是t", sound: "트" },
+    "ㄸ": { roman: "tt → 뜨", rule: "在初聲位置時，詞語第一個字和其餘位置都是tt，在收尾音時是t", sound: "뜨" },
+    "ㅂ": { roman: "p/b → 브", rule: "在初聲位置時，詞語第一個字偏向p，位於詞語其餘位置偏向b，在收尾音是p", sound: "브" },
+    "ㅍ": { roman: "p → 프", rule: "在初聲位置時，詞語第一個字和其餘位置都是p，在收尾音時是p", sound: "프" },
+    "ㅃ": { roman: "pp → 쁘", rule: "在初聲位置時，詞語第一個字和其餘位置都是pp，在收尾音時是p", sound: "쁘" },
+    "ㅈ": { roman: "ch/j → 즈", rule: "在初聲位置時，詞語第一個字偏向ch，位於詞語其餘位置偏向j，在收尾音是t", sound: "즈" },
+    "ㅊ": { roman: "ch → 츠", rule: "在初聲位置時，詞語第一個字和其餘位置都是ch，在收尾音時是t", sound: "츠" },
+    "ㅉ": { roman: "jj → 쯔", rule: "在初聲位置時，詞語第一個字和其餘位置都是jj，在收尾音時是t", sound: "쯔" },
+    "ㄹ": { roman: "r/l → 르", rule: "在初聲位置時，詞語第一個字偏向r，位於詞語其餘位置偏向l，在收尾音是l", sound: "르" },
+    "ㄴ": { roman: "n → 느", rule: "在初聲位置時，詞語第一個字和其餘位置都是n，在收尾音時也是n", sound: "느" },
+    "ㅁ": { roman: "m → 므", rule: "在初聲位置時，詞語第一個字和其餘位置都是m，在收尾音時也是m", sound: "므" },
+    "ㅅ": { roman: "s → 스", rule: "在初聲位置時，詞語第一個字和其餘位置都是s，在收尾音時是t", sound: "스" },
+    "ㅆ": { roman: "ss → 쓰", rule: "在初聲位置時，詞語第一個字和其餘位置都是ss，在收尾音時是t", sound: "쓰" },
+    "ㅇ": { roman: "零聲母 → 으", rule: "在初聲位置時不發音，在收尾音是ng", sound: "으" },
+    "ㅎ": { roman: "h → 흐", rule: "在初聲位置時，詞語第一個字和其餘位置都是h，在收尾音時是h", sound: "흐" },
+    "ㅏ": { roman: "a → 아", rule: "開口音，嘴巴大開，聲音明亮", sound: "아" },
+    "ㅑ": { roman: "ya → 야", rule: "在ㅏ前加y音，嘴巴大開", sound: "야" },
+    "ㅓ": { roman: "eo → 어", rule: "嘴巴半開，聲音偏低沉", sound: "어" },
+    "ㅕ": { roman: "yeo → 여", rule: "在ㅓ前加y音，嘴巴半開", sound: "여" },
+    "ㅗ": { roman: "o → 오", rule: "嘴巴圓形，聲音明亮", sound: "오" },
+    "ㅛ": { roman: "yo → 요", rule: "在ㅗ前加y音，嘴巴圓形", sound: "요" },
+    "ㅜ": { roman: "u → 우", rule: "嘴巴收窄，聲音低沉", sound: "우" },
+    "ㅠ": { roman: "yu → 유", rule: "在ㅜ前加y音，嘴巴收窄", sound: "유" },
+    "ㅡ": { roman: "eu → 으", rule: "嘴巴橫向拉平，聲音偏低", sound: "으" },
+    "ㅣ": { roman: "i → 이", rule: "嘴巴收窄，聲音明亮", sound: "이" },
+    "ㅐ": { roman: "ae → 애", rule: "介於ㅏ和ㅔ之間，嘴巴半開", sound: "애" },
+    "ㅒ": { roman: "yae → 얘", rule: "在ㅐ前加y音", sound: "얘" },
+    "ㅔ": { roman: "e → 에", rule: "嘴巴半開，聲音明亮", sound: "에" },
+    "ㅖ": { roman: "ye → 예", rule: "在ㅔ前加y音", sound: "예" },
+    "ㅘ": { roman: "wa → 와", rule: "由ㅗ＋ㅏ組合，嘴巴先圓後開", sound: "와" },
+    "ㅙ": { roman: "wae → 왜", rule: "由ㅗ＋ㅐ組合，嘴巴先圓後半開", sound: "왜" },
+    "ㅚ": { roman: "oe → 외", rule: "由ㅗ＋ㅣ組合，嘴巴先圓後收窄", sound: "외" },
+    "ㅝ": { roman: "wo → 워", rule: "由ㅜ＋ㅓ組合，嘴巴先收窄後半開", sound: "워" },
+    "ㅞ": { roman: "we → 웨", rule: "由ㅜ＋ㅔ組合，嘴巴先收窄後半開", sound: "웨" },
+    "ㅟ": { roman: "wi → 위", rule: "由ㅜ＋ㅣ組合，嘴巴先收窄後收窄", sound: "위" },
+    "ㅢ": { roman: "ui → 의", rule: "由ㅡ＋ㅣ組合，嘴巴先橫拉後收窄", sound: "의" }
+  };
+
+  const names = {
+    "ㄱ":"기역 (giyeok)","ㅋ":"키읔 (kieuk)","ㄲ":"쌍기역 (ssanggiyeok)",
+    "ㄷ":"디귿 (digeut)","ㅌ":"티읕 (tieut)","ㄸ":"쌍디귿 (ssangdigeut)",
+    "ㅂ":"비읍 (bieup)","ㅍ":"피읖 (pieup)","ㅃ":"쌍비읍 (ssangbieup)",
+    "ㅈ":"지읒 (jieut)","ㅊ":"치읓 (chieut)","ㅉ":"쌍지읒 (ssangjieut)",
+    "ㄹ":"리을 (rieul)","ㄴ":"니은 (nieun)","ㅁ":"미음 (mieum)",
+    "ㅅ":"시옷 (siot)","ㅆ":"쌍시옷 (ssangsiot)","ㅇ":"이응 (ieung)","ㅎ":"히읗 (hieut)",
+    "ㅏ":"아","ㅑ":"야","ㅓ":"어","ㅕ":"여","ㅗ":"오","ㅛ":"요","ㅜ":"우","ㅠ":"유","ㅡ":"으","ㅣ":"이",
+    "ㅐ":"애","ㅒ":"얘","ㅔ":"에","ㅖ":"예","ㅘ":"와","ㅙ":"왜","ㅚ":"외","ㅝ":"워","ㅞ":"웨","ㅟ":"위","ㅢ":"의"
+  };
+
+  const categories = {
+    "ㄱ":"平音","ㅋ":"送氣音","ㄲ":"硬音","ㄷ":"平音","ㅌ":"送氣音","ㄸ":"硬音",
+    "ㅂ":"平音","ㅍ":"送氣音","ㅃ":"硬音","ㅈ":"平音","ㅊ":"送氣音","ㅉ":"硬音",
+    "ㄹ":"平音","ㄴ":"平音","ㅁ":"平音","ㅅ":"平音","ㅆ":"硬音","ㅇ":"平音","ㅎ":"平音",
+    "ㅏ":"單母音","ㅑ":"單母音","ㅓ":"單母音","ㅕ":"單母音","ㅗ":"單母音","ㅛ":"單母音",
+    "ㅜ":"單母音","ㅠ":"單母音","ㅡ":"單母音","ㅣ":"單母音",
+    "ㅐ":"複合母音","ㅒ":"複合母音","ㅔ":"複合母音","ㅖ":"複合母音",
+    "ㅘ":"複合母音","ㅙ":"複合母音","ㅚ":"複合母音","ㅝ":"複合母音","ㅞ":"複合母音","ㅟ":"複合母音","ㅢ":"複合母音"
+  };
+
+  const examples = {
+    "ㄱ":"가방, 사과","ㅋ":"코끼리,  케이크","ㄲ":"까치, 꿀","ㄷ":"달, 바다","ㅌ":"토끼, 버튼","ㄸ":"딸기, 뜨겁다",
+    "ㅂ":"바지, 밥","ㅍ":"포도, 아파트","ㅃ":"빵, 빨리","ㅈ":"자전거, 가지","ㅊ":"차, 친구","ㅉ":"짜다, 쯤",
+    "ㄹ":"라디오, 길","ㄴ":"나무, 눈","ㅁ":"머리, 밤","ㅅ":"사람, 옷","ㅆ":"쌀, 글씨","ㅇ":"아이, 방","ㅎ":"하늘, 꽃",
+    "ㅏ":"아버지, 사랑","ㅑ":"야구, 이야기","ㅓ":"어머니, 서울","ㅕ":"여자, 여행","ㅗ":"오리, 오빠","ㅛ":"요리, 요즘",
+    "ㅜ":"우유, 친구","ㅠ":"유리, 유명","ㅡ":"으뜸, 그늘","ㅣ":"이름, 친구",
+    "ㅐ":"애인, 사랑해","ㅒ":"얘기, 얘야","ㅔ":"에너지, 에어컨","ㅖ":"예술, 예쁘다",
+    "ㅘ":"와인, 과자","ㅙ":"왜, 왜냐하면","ㅚ":"외국, 외출","ㅝ":"원숭이, 원하다","ㅞ":"웨딩, 웨이브","ㅟ":"위험, 위치","ㅢ":"의사, 의미"
+  };
+
+  const order = ["ㄱ","ㄲ","ㅋ","ㄴ","ㄷ","ㄸ","ㅌ","ㄹ","ㅁ","ㅂ","ㅃ","ㅍ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅎ",
+               "ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ",
+               "ㅐ","ㅒ","ㅔ","ㅖ","ㅘ","ㅙ","ㅚ","ㅝ","ㅞ","ㅟ","ㅢ"];
+
+
+  // 播放目前字母發音
+  function playCurrent() {
+    if (!currentLetter) return;
+    const utterance = new SpeechSynthesisUtterance(romanRules[currentLetter].sound);
+    utterance.lang = "ko-KR";
+    speechSynthesis.speak(utterance);
+  }
+
+  // 播放目前字母的例子詞語
+  function playExample() {
+    if (!currentLetter) return;
+    const ex = examples[currentLetter];
+    if (!ex) return;
+    ex.split(",").forEach(word => {
+      const utterance = new SpeechSynthesisUtterance(word.trim());
+      utterance.lang = "ko-KR";
+      speechSynthesis.speak(utterance);
+    });
+  }
+
+  // 播放某一分類全部字母
+  function playCategory(categoryKeyword) {
+   const letters = order.filter(l => categories[l] === categoryKeyword);
+   letters.forEach(letter => {
+    const utterance = new SpeechSynthesisUtterance(romanRules[letter].sound);
+    utterance.lang = "ko-KR";
+    speechSynthesis.speak(utterance);
+   });
+  }
+
+
+  // 點擊字卡顯示資訊
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const letter = card.textContent.trim().charAt(0);
+      currentLetter = letter;
+      document.getElementById('info').textContent = getSeries(letter);
+      document.getElementById('roman').textContent = "字母：" + letter;
+      document.getElementById('rule').textContent = "拼音：" + romanRules[letter].roman;
+      document.getElementById('name').textContent = "說明：" + romanRules[letter].rule;
+      document.getElementById('category').textContent = "名稱：" + names[letter];
+      document.getElementById('examples').textContent = "分類：" + categories[letter] + "\n例子：" + examples[letter];
+      playCurrent();
+    });
+  });
+</script>
+<div class="footer">
+  © 2026 KLT_Love_Korean. All rights reserved.<br>
+  本程式碼由 KLT_Love_Korean 設計與所有，<br>
+  僅供教學使用，未經允許不得轉載或修改。
+</div>
+</body>
+</html>
